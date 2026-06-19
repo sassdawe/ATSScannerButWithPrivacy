@@ -1,0 +1,1053 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:8cb763ce-838f-49d4-991d-9e1bc27c71e3",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-06-19T21:37:41Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "authors": [
+            {
+              "name": "CycloneDX"
+            }
+          ],
+          "name": "CycloneDX module for .NET",
+          "version": "6.2.0.0",
+          "externalReferences": [
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-dotnet",
+              "type": "website"
+            }
+          ]
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "AtsScanner@1.0.0",
+      "name": "AtsScanner",
+      "version": "1.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/coverlet.collector@6.0.4",
+      "authors": [
+        {
+          "name": "tonerdo"
+        }
+      ],
+      "name": "coverlet.collector",
+      "version": "6.0.4",
+      "description": "Coverlet is a cross platform code coverage library for .NET, with support for line, branch and method coverage.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "A0ABCE1EF08DC1267CBE07DE8D8BC69A32A3559EA9CD55DE1EA340BAD1397364C305B304E1A8A718E41549E0E64123EE706FB38CA23EAB3F959928B94193E939"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:nuget/coverlet.collector@6.0.4",
+      "externalReferences": [
+        {
+          "url": "https://github.com/coverlet-coverage/coverlet",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/coverlet-coverage/coverlet.git",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/DocumentFormat.OpenXml@3.5.1",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ],
+      "name": "DocumentFormat.OpenXml",
+      "version": "3.5.1",
+      "description": "The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:\n\n- High-performance generation of word-processing documents, spreadsheets, and presentations.\n- Populating content in Word files from an XML data source.\n- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.\n- Extraction of data from Excel documents.\n- Searching and replacing content in Word/PowerPoint using regular expressions.\n- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.\n- Document modification, such as removing tracked revisions or removing unacceptable content from documents.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2AE8E450CC92072B4F7C01F0C179D4D33F0BBC22D65231B7906A9E3BCC4C6F67D299568E705EC802750D5CCAE3BF18803B90EF084A71014504573271062606F6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "\u00A9 Microsoft Corporation. All rights reserved.",
+      "purl": "pkg:nuget/DocumentFormat.OpenXml@3.5.1",
+      "externalReferences": [
+        {
+          "url": "https://github.com/dotnet/Open-XML-SDK",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/dotnet/Open-XML-SDK",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/DocumentFormat.OpenXml.Framework@3.5.1",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ],
+      "name": "DocumentFormat.OpenXml.Framework",
+      "version": "3.5.1",
+      "description": "The Open XML SDK provides tools for working with Office Word, Excel, and PowerPoint documents. It supports scenarios such as:\n\n- High-performance generation of word-processing documents, spreadsheets, and presentations.\n- Populating content in Word files from an XML data source.\n- Splitting up (shredding) a Word or PowerPoint file into multiple files, and combining multiple Word/PowerPoint files into a single file.\n- Extraction of data from Excel documents.\n- Searching and replacing content in Word/PowerPoint using regular expressions.\n- Updating cached data and embedded spreadsheets for charts in Word/PowerPoint.\n- Document modification, such as removing tracked revisions or removing unacceptable content from documents.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "13CD67D00E3DC63804B5D4E5432049F555847B6A2A63253057E182B8430D658562D6F04C931C323BE1DD1F660CFE86D742DC106BA2F96E696561EDC5A6F973F8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "\u00A9 Microsoft Corporation. All rights reserved.",
+      "purl": "pkg:nuget/DocumentFormat.OpenXml.Framework@3.5.1",
+      "externalReferences": [
+        {
+          "url": "https://github.com/dotnet/Open-XML-SDK",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/dotnet/Open-XML-SDK",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/FluentAssertions@8.10.0",
+      "authors": [
+        {
+          "name": "Dennis Doomen,Jonas Nyrup,Xceed"
+        }
+      ],
+      "name": "FluentAssertions",
+      "version": "8.10.0",
+      "description": "A very extensive set of extension methods that allow you to more naturally specify the expected outcome of a TDD or\n      BDD-style unit tests. Works with .NET Standard 2.0 and higher, .NET Framework 4.7 and higher and .NET 6 and higher.\n      Supports the unit test frameworks MSTest2, MSTest3, MSTest4, NUnit3, NUnit4, XUnit2, XUnit3, MSpec and TUnit.\n\n      IMPORTANT: This version is free for open-source projects and non-commercial use, but commercial use requires [a paid license](https://xceed.com/products/unit-testing/fluent-assertions/).\n      Check out the [license page](LICENSE) for more information.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2CEF8EE924FC1A9045939C9F06FE1D3B2F236CA9AF77F3E8793F08794B2E51DC61B9C4F5E41EAF70A78F73A327F38486DC3BB9CC1A17F6FFC2686436A1AD6643"
+        }
+      ],
+      "copyright": "Copyright 2024-2026 Xceed Software Inc., all rights reserved",
+      "purl": "pkg:nuget/FluentAssertions@8.10.0",
+      "externalReferences": [
+        {
+          "url": "https://xceed.com/products/unit-testing/fluent-assertions/",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/fluentassertions/fluentassertions",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Microsoft.CodeCoverage@17.14.1",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ],
+      "name": "Microsoft.CodeCoverage",
+      "version": "17.14.1",
+      "description": "Microsoft.CodeCoverage package brings infra for collecting code coverage from vstest.console.exe and \u0022dotnet test\u0022.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "27F6599442877E00CC65252D0DBB1A71CA0B0B5AEB113BE8B5030C7F89FA4DB7CBC72B5D6133F775B2B1684E71D83F9B5EEC2811265E4A0C9DDB8028DE9AE166"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "\u00A9 Microsoft Corporation. All rights reserved.",
+      "purl": "pkg:nuget/Microsoft.CodeCoverage@17.14.1",
+      "externalReferences": [
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Microsoft.NET.Test.Sdk@17.14.1",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ],
+      "name": "Microsoft.NET.Test.Sdk",
+      "version": "17.14.1",
+      "description": "The MSbuild targets and properties for building .NET test projects.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4AD1AAFD75F13D10D54EE1E892A835403356368FCD087045FBB10041622DD6B7AF95879333FCDD4C4A75F772F54AAB5DD3021486E4FFEC0888CC9290DC7371B3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "\u00A9 Microsoft Corporation. All rights reserved.",
+      "purl": "pkg:nuget/Microsoft.NET.Test.Sdk@17.14.1",
+      "externalReferences": [
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Microsoft.TestPlatform.ObjectModel@17.14.1",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ],
+      "name": "Microsoft.TestPlatform.ObjectModel",
+      "version": "17.14.1",
+      "description": "The Microsoft Test Platform Object Model.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "FA38A8CEF2083A790EDE99D97F8408BACC286416E3F1EE3E453C75D4A91F0DBAE19C52D8C127EE5E4234A7FEF140804FE9759F66F12C99F08FAF3CBDCC8A3EDD"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "\u00A9 Microsoft Corporation. All rights reserved.",
+      "purl": "pkg:nuget/Microsoft.TestPlatform.ObjectModel@17.14.1",
+      "externalReferences": [
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Microsoft.TestPlatform.TestHost@17.14.1",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ],
+      "name": "Microsoft.TestPlatform.TestHost",
+      "version": "17.14.1",
+      "description": "Testplatform host executes the test using specified adapter.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "FD5DC072EFE5AA760322715C69D4B983ED4F775F5077EC6B750A90E2DD3C8B87AE3FDA961FA5C6A32CFA62575305AE8451FD9BFFC700A03F1C2E3CE808601304"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "\u00A9 Microsoft Corporation. All rights reserved.",
+      "purl": "pkg:nuget/Microsoft.TestPlatform.TestHost@17.14.1",
+      "externalReferences": [
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/microsoft/vstest",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Newtonsoft.Json@13.0.3",
+      "authors": [
+        {
+          "name": "James Newton-King"
+        }
+      ],
+      "name": "Newtonsoft.Json",
+      "version": "13.0.3",
+      "description": "Json.NET is a popular high-performance JSON framework for .NET",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "99B252BC77D1C5F5F7B51FD4EA7D5653E9961D7B3061CF9207F8643A9C7CC9965EEBC84D6467F2989BB4723B1A244915CC232A78F894E8B748CA882A7C89FB92"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "Copyright \u00A9 James Newton-King 2008",
+      "purl": "pkg:nuget/Newtonsoft.Json@13.0.3",
+      "externalReferences": [
+        {
+          "url": "https://www.newtonsoft.com/json",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/JamesNK/Newtonsoft.Json",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Spectre.Console@0.55.0",
+      "authors": [
+        {
+          "name": "Patrik Svensson, Phil Scott, Nils Andresen, C\u00E9dric Luthi"
+        }
+      ],
+      "name": "Spectre.Console",
+      "version": "0.55.0",
+      "description": "A library that makes it easier to create beautiful console applications.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5899D2441B51C7110802E5168AB79D3CAB67AD48FDE9824E190C4E449FB9E2AE993785C1EFE6296E267F1155D9527B01D435272F7F9F8B313423813EAC734210"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "Patrik Svensson, Phil Scott, Nils Andresen, C\u00E9dric Luthi",
+      "purl": "pkg:nuget/Spectre.Console@0.55.0",
+      "externalReferences": [
+        {
+          "url": "https://github.com/spectreconsole/spectre.console",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/spectreconsole/spectre.console",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Spectre.Console.Ansi@0.55.0",
+      "authors": [
+        {
+          "name": "Patrik Svensson, Phil Scott, Nils Andresen, C\u00E9dric Luthi"
+        }
+      ],
+      "name": "Spectre.Console.Ansi",
+      "version": "0.55.0",
+      "description": "A library that makes it easier to create beautiful console applications.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9CD6CE802724D5AE5C0BE54581FA922F4B45A5DC9BBE22B6F685E06EE352E053D7EC625CB7FE8824A148CD4A95BAAACEB2681020E220371AAB2E7C46720132FE"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "Patrik Svensson, Phil Scott, Nils Andresen, C\u00E9dric Luthi",
+      "purl": "pkg:nuget/Spectre.Console.Ansi@0.55.0",
+      "externalReferences": [
+        {
+          "url": "https://github.com/spectreconsole/spectre.console",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/spectreconsole/spectre.console",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/Spectre.Console.Cli@0.55.0",
+      "authors": [
+        {
+          "name": "Patrik Svensson, Phil Scott, Nils Andresen, C\u00E9dric Luthi, Frank Ray"
+        }
+      ],
+      "name": "Spectre.Console.Cli",
+      "version": "0.55.0",
+      "description": "A library that makes it easier to create beautiful console applications.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "64F14001A4EF9207C1D432B5135CA908CFC1A57D7131F23E719844166E1C114FC59809039891C2E33FB206F02FA64AF63D05CA6AB5632B436F0FBBA3B4BA1CDC"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "Patrik Svensson, Phil Scott, Nils Andresen, C\u00E9dric Luthi, Frank Ray",
+      "purl": "pkg:nuget/Spectre.Console.Cli@0.55.0",
+      "externalReferences": [
+        {
+          "url": "https://github.com/spectreconsole/spectre.console.cli",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/spectreconsole/spectre.console.cli",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/System.IO.Packaging@10.0.2",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ],
+      "name": "System.IO.Packaging",
+      "version": "10.0.2",
+      "description": "Provides classes that support storage of multiple data objects in a single container.",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "D917755A3005A8CE0C5068B16D956EDC73B774844D71BD84C8FA4C493016561EE84348AAFB6421F844997A5F8599E118BF342B6B22A8BD5B5CD2CD983488576D"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "\u00A9 Microsoft Corporation. All rights reserved.",
+      "purl": "pkg:nuget/System.IO.Packaging@10.0.2",
+      "externalReferences": [
+        {
+          "url": "https://dot.net/",
+          "type": "website"
+        },
+        {
+          "url": "https://github.com/dotnet/dotnet",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/UglyToad.PdfPig@1.7.0-custom-5",
+      "authors": [
+        {
+          "name": "UglyToad.PdfPig"
+        }
+      ],
+      "name": "UglyToad.PdfPig",
+      "version": "1.7.0-custom-5",
+      "description": "Package Description",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4D0B7A47E62470755E8D24DF507DAF782C4E5CB3AAF9D11A2CE7EAF1C81A5097DE2D210ED773FFD73F791E10A0D46DD4EEEF20491C07DF12719B6741650ED14D"
+        }
+      ],
+      "purl": "pkg:nuget/UglyToad.PdfPig@1.7.0-custom-5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/UglyToad.PdfPig.Core@1.7.0-custom-5",
+      "authors": [
+        {
+          "name": "UglyToad.PdfPig.Core"
+        }
+      ],
+      "name": "UglyToad.PdfPig.Core",
+      "version": "1.7.0-custom-5",
+      "description": "Package Description",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3E3A481C39B1C4AB0B92355C1600318CE507AAF92D47E87D5E078D28A007B8516F53A6E34FE3B271F5B10F756FBB788FC6778C4D0BB9953825B5EF130E40BBF5"
+        }
+      ],
+      "purl": "pkg:nuget/UglyToad.PdfPig.Core@1.7.0-custom-5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/UglyToad.PdfPig.Fonts@1.7.0-custom-5",
+      "authors": [
+        {
+          "name": "UglyToad.PdfPig.Fonts"
+        }
+      ],
+      "name": "UglyToad.PdfPig.Fonts",
+      "version": "1.7.0-custom-5",
+      "description": "Package Description",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4F99EE1C6496C5A56EEDCC98D42FE37208077FF763E0BB64D582426850D00C8D178AA9E5CCB4ECF6474A00783045C5484D9CEE31493832D1D281D9787DCD1F8B"
+        }
+      ],
+      "purl": "pkg:nuget/UglyToad.PdfPig.Fonts@1.7.0-custom-5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/UglyToad.PdfPig.Tokenization@1.7.0-custom-5",
+      "authors": [
+        {
+          "name": "UglyToad.PdfPig.Tokenization"
+        }
+      ],
+      "name": "UglyToad.PdfPig.Tokenization",
+      "version": "1.7.0-custom-5",
+      "description": "Package Description",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1323A1A3FDBBB769F694679DE62D991C5B7E4ABAD274430FC592FE96EC9CAC7DA59D939AB240473E6E2857048286BE941259B94945060738AC476D48A65E7D6E"
+        }
+      ],
+      "purl": "pkg:nuget/UglyToad.PdfPig.Tokenization@1.7.0-custom-5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/UglyToad.PdfPig.Tokens@1.7.0-custom-5",
+      "authors": [
+        {
+          "name": "UglyToad.PdfPig.Tokens"
+        }
+      ],
+      "name": "UglyToad.PdfPig.Tokens",
+      "version": "1.7.0-custom-5",
+      "description": "Package Description",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "E8B92C81144BE7800B2446CA6F201C9944DA12B84E11DA5B12205F49C304FE0C3ECB98F258544246ACF61BA303616753D54CBC7357F89CB11309B5CF0E39F5B5"
+        }
+      ],
+      "purl": "pkg:nuget/UglyToad.PdfPig.Tokens@1.7.0-custom-5"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit@2.9.3",
+      "authors": [
+        {
+          "name": "jnewkirk,bradwilson"
+        }
+      ],
+      "name": "xunit",
+      "version": "2.9.3",
+      "description": "xUnit.net is a developer testing framework, built to support Test Driven Development, with a design goal of extreme simplicity and alignment with framework features.\n\nInstalling this package installs xunit.core, xunit.assert, and xunit.analyzers.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "DFF6B254F0BB35059010D4794446CE81762C6E1A09B26A67C506B9A4EE25C5B8C66DC90EB3ADA7B26E242C4AF373C9E0ED5E57CF4F2EC158CCA9A6462625C2AE"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright (C) .NET Foundation",
+      "purl": "pkg:nuget/xunit@2.9.3",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/xunit",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit.abstractions@2.0.3",
+      "authors": [
+        {
+          "name": "James Newkirk,Brad Wilson"
+        }
+      ],
+      "name": "xunit.abstractions",
+      "version": "2.0.3",
+      "description": "Common abstractions used to exchange information between xUnit.net and version-independent runners (xunit.abstractions.dll).",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3CA26B8B97F4A8440F16F818E82651F571BC2513A5592742FD960B9240D0B880FEF84827FB25A307E61FE7B019F14E864653FBCF7DEE0D0E3FAF90593DEAF624"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unknown - See URL",
+            "url": "https://raw.githubusercontent.com/xunit/xunit/master/license.txt"
+          }
+        }
+      ],
+      "purl": "pkg:nuget/xunit.abstractions@2.0.3",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/xunit",
+          "type": "website"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit.analyzers@1.18.0",
+      "authors": [
+        {
+          "name": "jnewkirk,bradwilson,marcind"
+        }
+      ],
+      "name": "xunit.analyzers",
+      "version": "1.18.0",
+      "description": "xUnit.net is a developer testing framework, built to support Test Driven Development, with a design goal of extreme simplicity and alignment with framework features.\n\nInstalling this package provides code analyzers to help developers find and fix frequent issues when writing tests and xUnit.net extensibility code.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "632F6D380CD59DC1356AF0361AB389A14C53993E9F40939CAB1B20F5FE773B1ED8ED5FFF06D438195F7383BAA7A8CCF2CF299A6EB889E7948629BD4729B3CE38"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright (C) .NET Foundation",
+      "purl": "pkg:nuget/xunit.analyzers@1.18.0",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/xunit.analyzers",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit.assert@2.9.3",
+      "authors": [
+        {
+          "name": "jnewkirk,bradwilson"
+        }
+      ],
+      "name": "xunit.assert",
+      "version": "2.9.3",
+      "description": "Includes the assertion library from xUnit.net (xunit.assert.dll). Supports .NET Standard 1.1\u002B and .NET 6.0\u002B.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "C1FAB008A0214961B2F4FFDD3EA0C64880673D6DEC509E3D3047DC4EA345FB90602708F0B476FD484EDA8D866E47CCA64DDF1DC31A041A79491E27A36E00EFF7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright (C) .NET Foundation",
+      "purl": "pkg:nuget/xunit.assert@2.9.3",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/xunit",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit.core@2.9.3",
+      "authors": [
+        {
+          "name": "jnewkirk,bradwilson"
+        }
+      ],
+      "name": "xunit.core",
+      "version": "2.9.3",
+      "description": "Includes the libraries for writing unit tests with xUnit.net.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "72FDAC3B7EEA26421B04BDDF5C3227DC43D0DB32BC2D0E8590C24D9E7D7173D9FC9A8DE293451103831F50D0A6C030C2C7CDD9889791AC9D32D7291AB288CD26"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright (C) .NET Foundation",
+      "purl": "pkg:nuget/xunit.core@2.9.3",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/xunit",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit.extensibility.core@2.9.3",
+      "authors": [
+        {
+          "name": "jnewkirk,bradwilson"
+        }
+      ],
+      "name": "xunit.extensibility.core",
+      "version": "2.9.3",
+      "description": "Includes xunit.core.dll for extensibility purposes. Supports .NET 4.5.2 or later, and .NET Standard 1.1.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4B46BE8E6205FC3ADA2AE27E15F59BA97330BE970AC633F719DAD0CF3E69AF7198B60208D977C374086453FE55216A96A27D91E90DF55FFF6C4C6694FA4A0369"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright (C) .NET Foundation",
+      "purl": "pkg:nuget/xunit.extensibility.core@2.9.3",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/xunit",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit.extensibility.execution@2.9.3",
+      "authors": [
+        {
+          "name": "jnewkirk,bradwilson"
+        }
+      ],
+      "name": "xunit.extensibility.execution",
+      "version": "2.9.3",
+      "description": "Includes xunit.execution.*.dll for extensibility purposes. Supports .NET 4.5.2 or later, and .NET Standard 1.1.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "222768052AC6C3F2A15B366C29721C4ADA218FFA111598B36D6794BFED213852DE30931E8125B942818DCE68D0B85F01B91B42C8F410BA459261D3679DF3C090"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright (C) .NET Foundation",
+      "purl": "pkg:nuget/xunit.extensibility.execution@2.9.3",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/xunit",
+          "type": "vcs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:nuget/xunit.runner.visualstudio@3.1.4",
+      "authors": [
+        {
+          "name": "jnewkirk,bradwilson"
+        }
+      ],
+      "name": "xunit.runner.visualstudio",
+      "version": "3.1.4",
+      "description": "Visual Studio 2022\u002B Test Explorer runner for the xUnit.net framework. Capable of running xUnit.net v1, v2, and v3 tests. Supports .NET 4.7.2 or later, and .NET 8 or later.",
+      "scope": "excluded",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "90172162131785EEA66C00240AE876C2B2DBC4361D8F757334E2779B543D2E808427A78FB050B54B7BEC8E3FD0958E9A690F077918A9F35EAD9703F494BB5BDD"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "copyright": "Copyright (C) .NET Foundation",
+      "purl": "pkg:nuget/xunit.runner.visualstudio@3.1.4",
+      "externalReferences": [
+        {
+          "url": "https://github.com/xunit/visualstudio.xunit",
+          "type": "vcs"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "AtsScanner@1.0.0",
+      "dependsOn": [
+        "pkg:nuget/DocumentFormat.OpenXml@3.5.1",
+        "pkg:nuget/Spectre.Console.Cli@0.55.0",
+        "pkg:nuget/UglyToad.PdfPig@1.7.0-custom-5",
+        "pkg:nuget/coverlet.collector@6.0.4",
+        "pkg:nuget/FluentAssertions@8.10.0",
+        "pkg:nuget/Microsoft.NET.Test.Sdk@17.14.1",
+        "pkg:nuget/xunit@2.9.3",
+        "pkg:nuget/xunit.runner.visualstudio@3.1.4"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/coverlet.collector@6.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/DocumentFormat.OpenXml.Framework@3.5.1",
+      "dependsOn": [
+        "pkg:nuget/System.IO.Packaging@10.0.2"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/DocumentFormat.OpenXml@3.5.1",
+      "dependsOn": [
+        "pkg:nuget/DocumentFormat.OpenXml.Framework@3.5.1"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/FluentAssertions@8.10.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/Microsoft.CodeCoverage@17.14.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/Microsoft.NET.Test.Sdk@17.14.1",
+      "dependsOn": [
+        "pkg:nuget/Microsoft.CodeCoverage@17.14.1",
+        "pkg:nuget/Microsoft.TestPlatform.TestHost@17.14.1"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/Microsoft.TestPlatform.ObjectModel@17.14.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/Microsoft.TestPlatform.TestHost@17.14.1",
+      "dependsOn": [
+        "pkg:nuget/Microsoft.TestPlatform.ObjectModel@17.14.1",
+        "pkg:nuget/Newtonsoft.Json@13.0.3"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/Newtonsoft.Json@13.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/Spectre.Console.Ansi@0.55.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/Spectre.Console.Cli@0.55.0",
+      "dependsOn": [
+        "pkg:nuget/Spectre.Console@0.55.0"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/Spectre.Console@0.55.0",
+      "dependsOn": [
+        "pkg:nuget/Spectre.Console.Ansi@0.55.0"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/System.IO.Packaging@10.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/UglyToad.PdfPig.Core@1.7.0-custom-5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/UglyToad.PdfPig.Fonts@1.7.0-custom-5",
+      "dependsOn": [
+        "pkg:nuget/UglyToad.PdfPig.Core@1.7.0-custom-5",
+        "pkg:nuget/UglyToad.PdfPig.Tokenization@1.7.0-custom-5",
+        "pkg:nuget/UglyToad.PdfPig.Tokens@1.7.0-custom-5"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/UglyToad.PdfPig.Tokenization@1.7.0-custom-5",
+      "dependsOn": [
+        "pkg:nuget/UglyToad.PdfPig.Core@1.7.0-custom-5",
+        "pkg:nuget/UglyToad.PdfPig.Tokens@1.7.0-custom-5"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/UglyToad.PdfPig.Tokens@1.7.0-custom-5",
+      "dependsOn": [
+        "pkg:nuget/UglyToad.PdfPig.Core@1.7.0-custom-5"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/UglyToad.PdfPig@1.7.0-custom-5",
+      "dependsOn": [
+        "pkg:nuget/UglyToad.PdfPig.Core@1.7.0-custom-5",
+        "pkg:nuget/UglyToad.PdfPig.Fonts@1.7.0-custom-5",
+        "pkg:nuget/UglyToad.PdfPig.Tokenization@1.7.0-custom-5",
+        "pkg:nuget/UglyToad.PdfPig.Tokens@1.7.0-custom-5"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/xunit.abstractions@2.0.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/xunit.analyzers@1.18.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/xunit.assert@2.9.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/xunit.core@2.9.3",
+      "dependsOn": [
+        "pkg:nuget/xunit.extensibility.core@2.9.3",
+        "pkg:nuget/xunit.extensibility.execution@2.9.3"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/xunit.extensibility.core@2.9.3",
+      "dependsOn": [
+        "pkg:nuget/xunit.abstractions@2.0.3"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/xunit.extensibility.execution@2.9.3",
+      "dependsOn": [
+        "pkg:nuget/xunit.extensibility.core@2.9.3"
+      ]
+    },
+    {
+      "ref": "pkg:nuget/xunit.runner.visualstudio@3.1.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:nuget/xunit@2.9.3",
+      "dependsOn": [
+        "pkg:nuget/xunit.analyzers@1.18.0",
+        "pkg:nuget/xunit.assert@2.9.3",
+        "pkg:nuget/xunit.core@2.9.3"
+      ]
+    }
+  ]
+}

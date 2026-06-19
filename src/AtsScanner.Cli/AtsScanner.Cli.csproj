@@ -13,6 +13,14 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>ats-scanner</AssemblyName>
+    <Version>1.0.0</Version>
+    <Authors>ATS Scanner Contributors</Authors>
+    <Copyright>Copyright © 2026 ATS Scanner Contributors</Copyright>
+    <Description>Local, privacy-first ATS resume scanner for Workday, Greenhouse, Taleo, Lever, and SuccessFactors</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/your-username/ASTScannerButWithPrivacy</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
 </Project>
