@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AtsScanner.Cli/AtsScanner.Cli.csproj" />
+    <Project Path="src/AtsScanner.Core/AtsScanner.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AtsScanner.Tests/AtsScanner.Tests.csproj" />
+  </Folder>
+</Solution>
