@@ -55,6 +55,7 @@ ats-scanner scan <resume> [options]
 |---|---|---|---|
 | `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors` | `all` | ATS platform to check against |
 | `-o`, `--output` | `text`, `json` | `text` | Output format |
+| `-v`, `--verbose` | — | off | Show expanded results with document analysis, positive checklist, issues grouped by category, and top priority actions |
 
 ---
 
@@ -91,6 +92,24 @@ dotnet run --project src/AtsScanner.Cli -- scan resume.pdf --output json > resul
 ```bash
 dotnet run --project src/AtsScanner.Cli -- scan resume.pdf -p greenhouse -o json
 ```
+
+### Get detailed feedback
+
+Add `-v` / `--verbose` for the full breakdown:
+
+```bash
+dotnet run --project src/AtsScanner.Cli -- scan resume.pdf --verbose
+```
+
+```bash
+dotnet run --project src/AtsScanner.Cli -- scan resume.pdf -p taleo -v
+```
+
+Verbose mode adds:
+- **Document Analysis** — detected contact info, format flags (columns, tables, images), and a full section inventory
+- **What looks good** — a positive checklist of things each platform will handle correctly
+- **Issues grouped by category** — Formatting, Structure, and Content issues listed separately with detailed `What to do` guidance
+- **Top Priority Actions** — the critical issues that affect the most platforms, ranked so you know what to fix first
 
 ---
 

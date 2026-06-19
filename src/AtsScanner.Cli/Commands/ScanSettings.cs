@@ -21,4 +21,9 @@ public sealed class ScanSettings : CommandSettings
     [Description("Output format: text, json")]
     [DefaultValue("text")]
     public string Output { get; init; } = "text";
+
+    [CommandOption("-v|--verbose")]
+    [Description("Show expanded results: document analysis, positive checklist, and issues grouped by category")]
+    [DefaultValue(false)]
+    public bool Verbose { get; init; }
 }
