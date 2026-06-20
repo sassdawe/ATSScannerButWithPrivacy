@@ -21,8 +21,8 @@ dotnet --version   # should be 10.x.x or higher
 ## Getting started
 
 ```bash
-git clone https://github.com/your-username/ASTScannerButWithPrivacy.git
-cd ASTScannerButWithPrivacy
+git clone https://github.com/your-username/ATSScannerButWithPrivacy.git
+cd ATSScannerButWithPrivacy
 dotnet build
 dotnet test
 ```
@@ -32,7 +32,7 @@ dotnet test
 ## Project structure
 
 ```
-ASTScannerButWithPrivacy/
+ATSScannerButWithPrivacy/
 ├── src/
 │   ├── AtsScanner.Core/           # All business logic (no UI dependencies)
 │   │   ├── Models/                # ParsedResume, ScanResult, ScanIssue, enums

@@ -6,5 +6,6 @@ public enum AtsPlatform
     Greenhouse,
     Taleo,
     Lever,
-    SuccessFactors
+    SuccessFactors,
+    Umantis
 }

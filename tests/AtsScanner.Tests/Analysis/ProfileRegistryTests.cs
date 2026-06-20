@@ -13,6 +13,9 @@ public class ProfileRegistryTests
     [InlineData("lever", AtsPlatform.Lever)]
     [InlineData("successfactors", AtsPlatform.SuccessFactors)]
     [InlineData("sap", AtsPlatform.SuccessFactors)]
+    [InlineData("umantis", AtsPlatform.Umantis)]
+    [InlineData("haufe-umantis", AtsPlatform.Umantis)]
+    [InlineData("haufe", AtsPlatform.Umantis)]
     public void TryParse_KnownName_Succeeds(string name, AtsPlatform expected)
     {
         var result = ProfileRegistry.TryParse(name, out var platform);
@@ -29,10 +32,10 @@ public class ProfileRegistryTests
     }
 
     [Fact]
-    public void GetAll_ReturnsFiveProfiles()
+    public void GetAll_ReturnsSixProfiles()
     {
         var profiles = ProfileRegistry.GetAll();
-        profiles.Should().HaveCount(5);
+        profiles.Should().HaveCount(6);
     }
 
     [Theory]
@@ -41,6 +44,7 @@ public class ProfileRegistryTests
     [InlineData(AtsPlatform.Taleo)]
     [InlineData(AtsPlatform.Lever)]
     [InlineData(AtsPlatform.SuccessFactors)]
+    [InlineData(AtsPlatform.Umantis)]
     public void Get_EachPlatform_ReturnsCorrectProfile(AtsPlatform platform)
     {
         var profile = ProfileRegistry.Get(platform);

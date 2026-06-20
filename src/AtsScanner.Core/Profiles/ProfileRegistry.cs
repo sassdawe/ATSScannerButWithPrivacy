@@ -11,7 +11,8 @@ public static class ProfileRegistry
         new GreenhouseProfile(),
         new TaleoProfile(),
         new LeverProfile(),
-        new SuccessFactorsProfile()
+        new SuccessFactorsProfile(),
+        new UmantisProfile()
     ];
 
     public static IReadOnlyList<IAtsPlatformProfile> GetAll() => All;
@@ -28,6 +29,7 @@ public static class ProfileRegistry
             "taleo" => AtsPlatform.Taleo,
             "lever" => AtsPlatform.Lever,
             "successfactors" or "sap" => AtsPlatform.SuccessFactors,
+            "umantis" or "haufe-umantis" or "haufe" => AtsPlatform.Umantis,
             _ => (AtsPlatform)(-1)
         };
         return (int)platform >= 0;

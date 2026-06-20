@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**ATS Scanner with Privacy** is a local, privacy-first resume scanner that simulates how applicant tracking systems (ATS) parse and score resumes. Users run this tool entirely on their own machine — no resume data is ever sent to external services. It supports analysis against the parsing behaviors of Workday, Greenhouse, Taleo, Lever, and SuccessFactors.
+**ATS Scanner with Privacy** is a local, privacy-first resume scanner that simulates how applicant tracking systems (ATS) parse and score resumes. Users run this tool entirely on their own machine — no resume data is ever sent to external services. It supports analysis against the parsing behaviors of Workday, Greenhouse, Taleo, Lever, SuccessFactors, and Haufe-umantis.
 
 ## Tech Stack
 

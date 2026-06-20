@@ -17,6 +17,7 @@ Your resume never leaves your machine.
 | **Taleo** (Oracle) | Oldest and strictest; plain text fares best |
 | **Lever** | Most lenient; recognises GitHub profiles |
 | **SAP SuccessFactors** | Similar strictness to Workday |
+| **Haufe-umantis** | DACH-region platform; supports German & English headers, strict on dates |
 
 ---
 
@@ -32,7 +33,8 @@ Your resume never leaves your machine.
 Clone the repository and build:
 
 ```bash
-git clone https://github.com/your-username/ASTScannerButWithPrivacy.git
+git clone https://github.com/your-username/ATSScannerButWithPrivacy.git
+cd ATSScannerButWithPrivacy
 cd ASTScannerButWithPrivacy
 dotnet build
 ```
@@ -55,7 +57,7 @@ ats-scanner scan <resume> [options]
 
 | Option | Values | Default | Description |
 |---|---|---|---|
-| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors` | `all` | ATS platform to check against |
+| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis` | `all` | ATS platform to check against |
 | `-o`, `--output` | `text`, `json` | `text` | Output format |
 | `-v`, `--verbose` | — | off | Show expanded results with document analysis, positive checklist, issues grouped by category, and top priority actions |
 
