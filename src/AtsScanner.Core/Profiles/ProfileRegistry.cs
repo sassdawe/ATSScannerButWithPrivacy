@@ -12,7 +12,10 @@ public static class ProfileRegistry
         new TaleoProfile(),
         new LeverProfile(),
         new SuccessFactorsProfile(),
-        new UmantisProfile()
+        new UmantisProfile(),
+        new DigitalentProfile(),
+        new SmartRecruitersProfile(),
+        new AvatureProfile()
     ];
 
     public static IReadOnlyList<IAtsPlatformProfile> GetAll() => All;
@@ -30,6 +33,9 @@ public static class ProfileRegistry
             "lever" => AtsPlatform.Lever,
             "successfactors" or "sap" => AtsPlatform.SuccessFactors,
             "umantis" or "haufe-umantis" or "haufe" => AtsPlatform.Umantis,
+            "digitalent" or "digitalent.ch" => AtsPlatform.Digitalent,
+            "smartrecruiters" or "smartrecruiters.com" => AtsPlatform.SmartRecruiters,
+            "avature" or "avature.net" => AtsPlatform.Avature,
             _ => (AtsPlatform)(-1)
         };
         return (int)platform >= 0;

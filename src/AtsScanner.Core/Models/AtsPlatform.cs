@@ -7,5 +7,8 @@ public enum AtsPlatform
     Taleo,
     Lever,
     SuccessFactors,
-    Umantis
+    Umantis,
+    Digitalent,
+    SmartRecruiters,
+    Avature
 }

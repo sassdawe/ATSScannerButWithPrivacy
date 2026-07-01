@@ -18,6 +18,8 @@ Your resume never leaves your machine.
 | **Lever** | Most lenient; recognises GitHub profiles |
 | **SAP SuccessFactors** | Similar strictness to Workday |
 | **Haufe-umantis** | DACH-region platform; supports German & English headers, strict on dates |
+| **SmartRecruiters** | Modern cloud ATS; LinkedIn/GitHub-aware, OCR fallback for images |
+| **Avature** | Configurable enterprise ATS/CRM; keyword-scoring against job requisitions, no image OCR |
 
 ---
 
@@ -57,7 +59,7 @@ ats-scanner scan <resume> [options]
 
 | Option | Values | Default | Description |
 |---|---|---|---|
-| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis` | `all` | ATS platform to check against |
+| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis`, `digitalent`, `smartrecruiters`, `avature` | `all` | ATS platform to check against |
 | `-o`, `--output` | `text`, `json` | `text` | Output format |
 | `-v`, `--verbose` | — | off | Show expanded results with document analysis, positive checklist, issues grouped by category, and top priority actions |
 
