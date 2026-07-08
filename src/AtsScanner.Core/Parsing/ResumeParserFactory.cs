@@ -7,7 +7,8 @@ public static class ResumeParserFactory
     private static readonly IReadOnlyList<IResumeParser> Parsers =
     [
         new PdfResumeParser(),
-        new DocxResumeParser()
+        new DocxResumeParser(),
+        new MarkdownResumeParser()
     ];
 
     public static IResumeParser GetParser(string filePath)

@@ -108,6 +108,10 @@ public enum AtsPlatform
     Taleo,
     Lever,
     SuccessFactors,
+    Umantis,
+    Digitalent,
+    SmartRecruiters,
+    Avature,
     MyNewPlatform    // ← add here
 }
 ```
@@ -156,6 +160,10 @@ private static readonly IReadOnlyList<IAtsPlatformProfile> All =
     new TaleoProfile(),
     new LeverProfile(),
     new SuccessFactorsProfile(),
+    new UmantisProfile(),
+    new DigitalentProfile(),
+    new SmartRecruitersProfile(),
+    new AvatureProfile(),
     new MyNewPlatformProfile()   // ← add here
 ];
 ```

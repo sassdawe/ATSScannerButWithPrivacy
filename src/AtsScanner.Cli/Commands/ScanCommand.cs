@@ -20,9 +20,9 @@ public sealed class ScanCommand : AsyncCommand<ScanSettings>
         }
 
         var ext = Path.GetExtension(filePath).ToLowerInvariant();
-        if (ext is not ".pdf" and not ".docx")
+        if (ext is not ".pdf" and not ".docx" and not ".md" and not ".markdown")
         {
-            AnsiConsole.MarkupLine("[red]Error:[/] Only .pdf and .docx files are supported.");
+            AnsiConsole.MarkupLine("[red]Error:[/] Only .pdf, .docx, .md, and .markdown files are supported.");
             return 1;
         }
 

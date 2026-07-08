@@ -18,6 +18,7 @@ Your resume never leaves your machine.
 | **Lever** | Most lenient; recognises GitHub profiles |
 | **SAP SuccessFactors** | Similar strictness to Workday |
 | **Haufe-umantis** | DACH-region platform; supports German & English headers, strict on dates |
+| **digitalent.ch** | Swiss RPO; human-reviewed (no ATS parsing), prioritises readability and copy-paste-friendly PDFs |
 | **SmartRecruiters** | Modern cloud ATS; LinkedIn/GitHub-aware, OCR fallback for images |
 | **Avature** | Configurable enterprise ATS/CRM; keyword-scoring against job requisitions, no image OCR |
 
