@@ -112,6 +112,7 @@ public enum AtsPlatform
     Digitalent,
     SmartRecruiters,
     Avature,
+    Personio,
     MyNewPlatform    // ← add here
 }
 ```
@@ -164,6 +165,7 @@ private static readonly IReadOnlyList<IAtsPlatformProfile> All =
     new DigitalentProfile(),
     new SmartRecruitersProfile(),
     new AvatureProfile(),
+    new PersonioProfile(),
     new MyNewPlatformProfile()   // ← add here
 ];
 ```

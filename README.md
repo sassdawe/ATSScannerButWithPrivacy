@@ -21,6 +21,7 @@ Your resume never leaves your machine.
 | **digitalent.ch** | Swiss RPO; human-reviewed (no ATS parsing), prioritises readability and copy-paste-friendly PDFs |
 | **SmartRecruiters** | Modern cloud ATS; LinkedIn/GitHub-aware, OCR fallback for images |
 | **Avature** | Configurable enterprise ATS/CRM; keyword-scoring against job requisitions, no image OCR |
+| **Personio** | DACH-region HR/ATS for SMEs; bilingual (German/English) header recognition, no image OCR |
 
 ---
 

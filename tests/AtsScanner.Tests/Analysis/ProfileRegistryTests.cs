@@ -20,6 +20,9 @@ public class ProfileRegistryTests
     [InlineData("smartrecruiters.com", AtsPlatform.SmartRecruiters)]
     [InlineData("avature", AtsPlatform.Avature)]
     [InlineData("avature.net", AtsPlatform.Avature)]
+    [InlineData("personio", AtsPlatform.Personio)]
+    [InlineData("personio.com", AtsPlatform.Personio)]
+    [InlineData("personio.de", AtsPlatform.Personio)]
     public void TryParse_KnownName_Succeeds(string name, AtsPlatform expected)
     {
         var result = ProfileRegistry.TryParse(name, out var platform);
@@ -39,7 +42,7 @@ public class ProfileRegistryTests
     public void GetAll_ReturnsAllProfiles()
     {
         var profiles = ProfileRegistry.GetAll();
-        profiles.Should().HaveCount(9);
+        profiles.Should().HaveCount(10);
     }
 
     [Theory]
@@ -52,6 +55,7 @@ public class ProfileRegistryTests
     [InlineData(AtsPlatform.Digitalent)]
     [InlineData(AtsPlatform.SmartRecruiters)]
     [InlineData(AtsPlatform.Avature)]
+    [InlineData(AtsPlatform.Personio)]
     public void Get_EachPlatform_ReturnsCorrectProfile(AtsPlatform platform)
     {
         var profile = ProfileRegistry.Get(platform);

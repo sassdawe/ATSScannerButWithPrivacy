@@ -17,7 +17,7 @@
     <Version>1.0.0</Version>
     <Authors>ATS Scanner Contributors</Authors>
     <Copyright>Copyright © 2026 ATS Scanner Contributors</Copyright>
-    <Description>Local, privacy-first ATS resume scanner for Workday, Greenhouse, Taleo, Lever, SuccessFactors, Haufe-umantis, digitalent.ch, SmartRecruiters, and Avature</Description>
+    <Description>Local, privacy-first ATS resume scanner for Workday, Greenhouse, Taleo, Lever, SuccessFactors, Haufe-umantis, digitalent.ch, SmartRecruiters, Avature, and Personio</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/your-username/ASTScannerButWithPrivacy</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

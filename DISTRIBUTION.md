@@ -162,7 +162,7 @@ ats-scanner scan resume.pdf
   <PackageId>AtsScanner</PackageId>
   <Version>1.0.0</Version>
   <Authors>Your Name</Authors>
-  <Description>Local, privacy-first ATS resume scanner for Workday, Greenhouse, Taleo, Lever, SuccessFactors, Haufe-umantis, digitalent.ch, SmartRecruiters, and Avature</Description>
+  <Description>Local, privacy-first ATS resume scanner for Workday, Greenhouse, Taleo, Lever, SuccessFactors, Haufe-umantis, digitalent.ch, SmartRecruiters, Avature, and Personio</Description>
   <PackageTags>ats;resume;cv;scanner;career</PackageTags>
   <PackageProjectUrl>https://github.com/your-username/ASTScannerButWithPrivacy</PackageProjectUrl>
   <PackageLicenseExpression>MIT</PackageLicenseExpression>
