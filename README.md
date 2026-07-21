@@ -62,7 +62,7 @@ ats-scanner scan <resume> [options]
 
 | Option | Values | Default | Description |
 |---|---|---|---|
-| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis`, `digitalent`, `smartrecruiters`, `avature`, `prospective` | `all` | ATS platform to check against |
+| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis`, `digitalent`, `smartrecruiters`, `avature`, `personio`, `prospective` | `all` | ATS platform to check against |
 | `-o`, `--output` | `text`, `json` | `text` | Output format |
 | `-v`, `--verbose` | — | off | Show expanded results with document analysis, positive checklist, issues grouped by category, and top priority actions |
 
