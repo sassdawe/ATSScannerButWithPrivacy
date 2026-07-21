@@ -15,7 +15,9 @@ public static class ProfileRegistry
         new UmantisProfile(),
         new DigitalentProfile(),
         new SmartRecruitersProfile(),
-        new AvatureProfile()
+        new AvatureProfile(),
+        new PersonioProfile(),
+        new ProspectiveProfile()
     ];
 
     public static IReadOnlyList<IAtsPlatformProfile> GetAll() => All;
@@ -36,6 +38,8 @@ public static class ProfileRegistry
             "digitalent" or "digitalent.ch" => AtsPlatform.Digitalent,
             "smartrecruiters" or "smartrecruiters.com" => AtsPlatform.SmartRecruiters,
             "avature" or "avature.net" => AtsPlatform.Avature,
+            "personio" or "personio.com" or "personio.de" => AtsPlatform.Personio,
+            "prospective" or "prospective.ch" => AtsPlatform.Prospective,
             _ => (AtsPlatform)(-1)
         };
         return (int)platform >= 0;

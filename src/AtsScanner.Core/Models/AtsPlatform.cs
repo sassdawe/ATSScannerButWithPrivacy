@@ -10,5 +10,7 @@ public enum AtsPlatform
     Umantis,
     Digitalent,
     SmartRecruiters,
-    Avature
+    Avature,
+    Personio,
+    Prospective
 }
