@@ -22,6 +22,7 @@ Your resume never leaves your machine.
 | **SmartRecruiters** | Modern cloud ATS; LinkedIn/GitHub-aware, OCR fallback for images |
 | **Avature** | Configurable enterprise ATS/CRM; keyword-scoring against job requisitions, no image OCR |
 | **Personio** | DACH-region HR/ATS for SMEs; bilingual (German/English) header recognition, no image OCR |
+| **prospective.ch** | Swiss e-recruiting platform used by public administrations & SMEs; German/French/Italian headers, strict on layout and dates |
 
 ---
 
@@ -61,7 +62,7 @@ ats-scanner scan <resume> [options]
 
 | Option | Values | Default | Description |
 |---|---|---|---|
-| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis`, `digitalent`, `smartrecruiters`, `avature` | `all` | ATS platform to check against |
+| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis`, `digitalent`, `smartrecruiters`, `avature`, `prospective` | `all` | ATS platform to check against |
 | `-o`, `--output` | `text`, `json` | `text` | Output format |
 | `-v`, `--verbose` | — | off | Show expanded results with document analysis, positive checklist, issues grouped by category, and top priority actions |
 
