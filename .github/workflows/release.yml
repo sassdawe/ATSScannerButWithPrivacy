@@ -41,11 +41,18 @@ jobs:
         run: |
           ./dist/${{ matrix.rid }}/ats-scanner${{ matrix.ext }} --help
 
-      - name: Package
+      - name: Package (Unix)
+        if: matrix.os != 'windows-latest'
         shell: bash
         run: |
           cd dist/${{ matrix.rid }}
           zip -r ../../ats-scanner-${{ matrix.rid }}.zip .
+
+      - name: Package (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          Compress-Archive -Path dist/${{ matrix.rid }}/* -DestinationPath ats-scanner-${{ matrix.rid }}.zip
 
       - uses: actions/upload-artifact@v4
         with:
