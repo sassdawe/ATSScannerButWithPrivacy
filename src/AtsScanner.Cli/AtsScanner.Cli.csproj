@@ -21,6 +21,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/your-username/ASTScannerButWithPrivacy</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
 </Project>

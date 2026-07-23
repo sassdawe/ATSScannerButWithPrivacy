@@ -89,7 +89,7 @@ public sealed class ScanCommand : AsyncCommand<ScanSettings>
             foreach (var issue in result.Issues.OrderBy(i => i.Severity))
             {
                 var (icon, color) = IssueStyle(issue.Severity);
-                AnsiConsole.MarkupLine($"  [{color}]{icon} [{issue.Category}][/] {Markup.Escape(issue.Message)}");
+                AnsiConsole.MarkupLine($"  [{color}]{icon} {Markup.Escape($"[{issue.Category}]")}[/] {Markup.Escape(issue.Message)}");
                 if (issue.Suggestion is not null)
                     AnsiConsole.MarkupLine($"    [grey]→ {Markup.Escape(issue.Suggestion)}[/]");
             }
