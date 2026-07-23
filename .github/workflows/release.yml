@@ -1,0 +1,65 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - rid: win-x64
+            os: windows-latest
+            ext: .exe
+          - rid: osx-arm64
+            os: macos-latest
+            ext: ''
+          - rid: osx-x64
+            os: macos-latest
+            ext: ''
+          - rid: linux-x64
+            os: ubuntu-latest
+            ext: ''
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Publish
+        run: >
+          dotnet publish src/AtsScanner.Cli -c Release -r ${{ matrix.rid }}
+          --self-contained true
+          -p:PublishSingleFile=true
+          -o ./dist/${{ matrix.rid }}
+
+      - name: Smoke test executable
+        shell: bash
+        run: |
+          ./dist/${{ matrix.rid }}/ats-scanner${{ matrix.ext }} --help
+
+      - name: Package
+        shell: bash
+        run: |
+          cd dist/${{ matrix.rid }}
+          zip -r ../../ats-scanner-${{ matrix.rid }}.zip .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ats-scanner-${{ matrix.rid }}
+          path: ats-scanner-${{ matrix.rid }}.zip
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: '**/*.zip'
+          generate_release_notes: true
