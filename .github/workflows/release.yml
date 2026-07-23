@@ -52,7 +52,9 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
-          Compress-Archive -Path dist/${{ matrix.rid }}/* -DestinationPath ats-scanner-${{ matrix.rid }}.zip
+          Push-Location "dist/${{ matrix.rid }}"
+          Compress-Archive -Path * -DestinationPath "../../ats-scanner-${{ matrix.rid }}.zip" -Force
+          Pop-Location
 
       - uses: actions/upload-artifact@v4
         with:
