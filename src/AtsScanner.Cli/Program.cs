@@ -1,12 +1,15 @@
+using System.Reflection;
 using AtsScanner.Cli.Commands;
 using Spectre.Console.Cli;
 
 var app = new CommandApp();
 
+var version = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "0.0.0";
+
 app.Configure(config =>
 {
     config.SetApplicationName("ats-scanner");
-    config.SetApplicationVersion("1.0.0");
+    config.SetApplicationVersion(version);
 
     config.AddCommand<ScanCommand>("scan")
         .WithDescription("Scan a resume (.pdf or .docx) against one or all ATS platforms.")
