@@ -50,6 +50,17 @@ public class ResumeTextAnalyzerTests
     [InlineData("Professional Summary", SectionType.Summary)]
     [InlineData("Certifications", SectionType.Certifications)]
     [InlineData("PROJECTS", SectionType.Projects)]
+    [InlineData("Berufserfahrung", SectionType.Experience)]
+    [InlineData("BERUFSERFAHRUNGEN", SectionType.Experience)]
+    [InlineData("Arbeitserfahrung", SectionType.Experience)]
+    [InlineData("Ausbildung", SectionType.Education)]
+    [InlineData("Kenntnisse", SectionType.Skills)]
+    [InlineData("Über mich", SectionType.Summary)]
+    [InlineData("Zusammenfassung", SectionType.Summary)]
+    [InlineData("Zertifikate", SectionType.Certifications)]
+    [InlineData("Sprachen", SectionType.Languages)]
+    [InlineData("Sprachkenntnisse", SectionType.Languages)]
+    [InlineData("Auszeichnungen", SectionType.Awards)]
     public void ExtractSections_RecognisesStandardHeaders(string header, SectionType expectedType)
     {
         var text = $"{header}\nSome content under the section.";
