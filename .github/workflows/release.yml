@@ -61,8 +61,76 @@ jobs:
           name: ats-scanner-${{ matrix.rid }}
           path: ats-scanner-${{ matrix.rid }}.zip
 
+  build-gui:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rid: win-x64
+            os: windows-latest
+            tfm: net10.0-windows10.0.19041.0
+            artifact: gui-win-x64
+          - rid: maccatalyst-x64
+            os: macos-latest
+            tfm: net10.0-maccatalyst
+            artifact: gui-osx-x64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Install required MAUI workloads
+        run: dotnet workload restore src/AtsScanner.Gui/AtsScanner.Gui.csproj
+
+      - name: Publish (Windows)
+        if: matrix.os == 'windows-latest'
+        run: >
+          dotnet publish src/AtsScanner.Gui -f ${{ matrix.tfm }} -c Release -r ${{ matrix.rid }}
+          --self-contained true
+          -p:WindowsAppSDKSelfContained=true
+          -o ./dist/${{ matrix.artifact }}
+
+      - name: Publish (MacCatalyst)
+        if: matrix.os == 'macos-latest'
+        run: >
+          dotnet publish src/AtsScanner.Gui -f ${{ matrix.tfm }} -c Release -r ${{ matrix.rid }}
+          --self-contained true
+          -o ./dist/${{ matrix.artifact }}
+
+      - name: Verify published output exists
+        shell: bash
+        run: |
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            test -f "dist/${{ matrix.artifact }}/AtsScanner.Gui.exe"
+          else
+            test -d "dist/${{ matrix.artifact }}"/*.app
+          fi
+
+      - name: Package (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          Push-Location "dist/${{ matrix.artifact }}"
+          Compress-Archive -Path * -DestinationPath "../../ats-scanner-${{ matrix.artifact }}.zip" -Force
+          Pop-Location
+
+      - name: Package (macOS)
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          cd dist/${{ matrix.artifact }}
+          zip -r ../../ats-scanner-${{ matrix.artifact }}.zip .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ats-scanner-${{ matrix.artifact }}
+          path: ats-scanner-${{ matrix.artifact }}.zip
+
   release:
-    needs: build
+    needs: [build, build-gui]
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -6,7 +6,7 @@
              x:DataType="vm:MainViewModel"
              Title="ATS Scanner">
 
-    <Grid Padding="24" RowSpacing="16" RowDefinitions="Auto,Auto,Auto,Auto,*">
+    <Grid Padding="24" RowSpacing="16" RowDefinitions="Auto,Auto,Auto,Auto,*,Auto">
 
         <!-- Header -->
         <VerticalStackLayout Grid.Row="0" Spacing="2">
@@ -95,6 +95,17 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+        <!-- Footer -->
+        <HorizontalStackLayout Grid.Row="5" HorizontalOptions="Center" Spacing="4" Margin="0,4,0,0">
+            <Label Text="Created by David Sass" FontSize="11" TextColor="#FFA09F9F" VerticalOptions="Center" />
+            <Label Text="·" FontSize="11" TextColor="#FFA09F9F" VerticalOptions="Center" />
+            <Label Text="Sponsor on GitHub ❤️" FontSize="11" TextColor="#FFA09F9F" TextDecorations="Underline" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSponsorLinkTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
 
     </Grid>
 

@@ -27,5 +27,17 @@ public partial class MainPage : ContentPage
         if (sender is BindableObject { BindingContext: ScanResultViewModel result })
             result.IsExpanded = !result.IsExpanded;
     }
+
+    private static async void OnSponsorLinkTapped(object? sender, TappedEventArgs e)
+    {
+        try
+        {
+            await Launcher.Default.OpenAsync(new Uri("https://github.com/sponsors/sassdawe"));
+        }
+        catch
+        {
+            // Ignore failures opening the default browser (e.g. no handler registered).
+        }
+    }
 }
 
