@@ -4,7 +4,11 @@ using Spectre.Console.Cli;
 
 var app = new CommandApp();
 
-var version = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "0.0.0";
+var version =
+    (Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly())
+        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
+    ?? Assembly.GetExecutingAssembly().GetName().Version?.ToString(3)
+    ?? "0.0.0";
 
 app.Configure(config =>
 {
