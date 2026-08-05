@@ -106,7 +106,7 @@ jobs:
           if [ "${{ matrix.os }}" = "windows-latest" ]; then
             test -f "dist/${{ matrix.artifact }}/AtsScanner.Gui.exe"
           else
-            test -d "dist/${{ matrix.artifact }}"/*.app
+            ls -d dist/${{ matrix.artifact }}/*.app >/dev/null 2>&1
           fi
 
       - name: Package (Windows)
