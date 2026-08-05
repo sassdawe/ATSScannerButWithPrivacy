@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace AtsScanner.Gui;
+﻿namespace AtsScanner.Gui;
 
 public partial class App : Application
 {
