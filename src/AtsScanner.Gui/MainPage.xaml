@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AtsScanner.Gui.ViewModels"
+             x:Class="AtsScanner.Gui.MainPage"
+             x:DataType="vm:MainViewModel"
+             Title="ATS Scanner">
+
+    <Grid Padding="24" RowSpacing="16" RowDefinitions="Auto,Auto,Auto,Auto,*,Auto">
+
+        <!-- Header -->
+        <VerticalStackLayout Grid.Row="0" Spacing="2">
+            <Label Text="ATS Scanner" FontSize="28" FontAttributes="Bold" />
+            <Label Text="Privacy-first resume scanning — nothing ever leaves your machine." FontSize="13" TextColor="Gray" />
+        </VerticalStackLayout>
+
+        <!-- File selection -->
+        <Border Grid.Row="1" Stroke="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" StrokeThickness="1" Padding="16" StrokeShape="RoundRectangle 8">
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                <Button Grid.Column="0" Text="Choose Resume…" Clicked="OnChooseFileClicked" />
+                <Label Grid.Column="1" Text="{Binding SelectedFileName}" VerticalOptions="Center" LineBreakMode="MiddleTruncation" />
+                <ActivityIndicator Grid.Column="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            </Grid>
+        </Border>
+
+        <!-- Platform selection -->
+        <Border Grid.Row="2" Stroke="LightGray" StrokeThickness="1" Padding="16" StrokeShape="RoundRectangle 8">
+            <VerticalStackLayout Spacing="10">
+                <Grid ColumnDefinitions="*,Auto,Auto">
+                    <Label Grid.Column="0" Text="ATS Platforms" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Button Grid.Column="1" Text="All" Clicked="OnSelectAllClicked" Padding="10,4" FontSize="12" />
+                    <Button Grid.Column="2" Text="None" Clicked="OnSelectNoneClicked" Padding="10,4" FontSize="12" Margin="6,0,0,0" />
+                </Grid>
+
+                <FlexLayout BindableLayout.ItemsSource="{Binding Platforms}" Wrap="Wrap" Direction="Row">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="vm:PlatformOption">
+                            <HorizontalStackLayout Margin="0,2,16,2" Spacing="4">
+                                <CheckBox IsChecked="{Binding IsSelected}" />
+                                <Label Text="{Binding DisplayName}" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Scan action + status -->
+        <Grid Grid.Row="3" ColumnDefinitions="Auto,*">
+            <Button Grid.Column="0" Text="Scan Resume" Command="{Binding ScanCommand}" />
+            <Label Grid.Column="1" Text="{Binding StatusMessage}" VerticalOptions="Center" Margin="12,0,0,0" TextColor="Gray" />
+        </Grid>
+
+        <!-- Results -->
+        <CollectionView Grid.Row="4" ItemsSource="{Binding Results}" Margin="0,4,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="vm:ScanResultViewModel">
+                    <Border Stroke="LightGray" StrokeThickness="1" Padding="14" Margin="0,0,0,10" StrokeShape="RoundRectangle 8">
+                        <VerticalStackLayout Spacing="8">
+                            <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto,Auto">
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding PlatformName}" FontAttributes="Bold" FontSize="16" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding ScoreLabel}" TextColor="{Binding RatingColor}" FontAttributes="Bold" Margin="0,0,10,0" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Rating}" TextColor="{Binding RatingColor}" />
+                                <Label Grid.Row="1" Grid.ColumnSpan="3" Text="{Binding IssuesSummary}" FontSize="13" TextColor="Gray" />
+                            </Grid>
+
+                            <Button Text="{Binding ExpanderGlyph}"
+                                    Clicked="OnToggleExpandClicked"
+                                    IsVisible="{Binding HasIssues}"
+                                    HorizontalOptions="Start"
+                                    Padding="10,2"
+                                    FontSize="10" />
+
+                            <VerticalStackLayout IsVisible="{Binding IsExpanded}" Spacing="6">
+                                <CollectionView ItemsSource="{Binding Issues}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:IssueDisplay">
+                                            <VerticalStackLayout Margin="0,4,0,4" Spacing="2">
+                                                <HorizontalStackLayout Spacing="6">
+                                                    <Label Text="{Binding Icon}" TextColor="{Binding IconColor}" FontAttributes="Bold" />
+                                                    <Label Text="{Binding Category}" FontAttributes="Bold" FontSize="12" TextColor="Gray" VerticalOptions="Center" />
+                                                </HorizontalStackLayout>
+                                                <Label Text="{Binding Message}" FontSize="14" Margin="20,0,0,0" />
+                                                <Label Text="{Binding Suggestion}" FontSize="12" TextColor="Gray" Margin="20,0,0,0" IsVisible="{Binding HasSuggestion}" />
+                                            </VerticalStackLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+
+                                <Label Text="{Binding DetectedSections, StringFormat='Detected sections: {0}'}" FontSize="12" TextColor="Green" IsVisible="{Binding HasDetectedSections}" />
+                                <Label Text="{Binding MissingSections, StringFormat='Missing sections: {0}'}" FontSize="12" TextColor="Crimson" IsVisible="{Binding HasMissingSections}" />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Footer -->
+        <HorizontalStackLayout Grid.Row="5" HorizontalOptions="Center" Spacing="4" Margin="0,4,0,0">
+            <Label Text="Created by David Sass" FontSize="11" TextColor="#FFA09F9F" VerticalOptions="Center" />
+            <Label Text="·" FontSize="11" TextColor="#FFA09F9F" VerticalOptions="Center" />
+            <Label Text="Sponsor on GitHub ❤️" FontSize="11" TextColor="#FFA09F9F" TextDecorations="Underline" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSponsorLinkTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentPage>

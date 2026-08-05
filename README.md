@@ -46,6 +46,21 @@ dotnet build
 
 ---
 
+## Desktop GUI
+
+Prefer a graphical interface? A .NET MAUI desktop app is available in `src/AtsScanner.Gui`, built on the same `AtsScanner.Core` engine as the CLI — all scanning still happens fully offline, on your machine.
+
+Requires the MAUI workload: `dotnet workload install maui`.
+
+```bash
+dotnet run --project src/AtsScanner.Gui -f net10.0-windows10.0.19041.0   # Windows
+dotnet run --project src/AtsScanner.Gui -f net10.0-maccatalyst           # macOS
+```
+
+The app lets you pick a resume file, choose which ATS platforms to check against, and view the same scores, ratings, and issue breakdowns as the CLI in an expandable results list.
+
+---
+
 ## Usage
 
 ```

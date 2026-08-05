@@ -24,3 +24,4 @@ Thumbs.db
 
 # Local sample resumes (may contain personal data) — never commit
 samples/
+dist/
