@@ -17,7 +17,7 @@
     <!-- Date-based (CalVer) version, e.g. 2026.07.30, so releases are self-describing by date.
          Override at build/publish time with -p:VersionPrefix=YYYY.MM.dd to pin an exact release date
          (e.g. in CI, derived from the release tag) instead of the machine's local build date. -->
-    <VersionPrefix Condition="'$(VersionPrefix)' == ''">$([System.DateTime]::UtcNow.ToString(`yyyy.MM.dd`))</VersionPrefix>
+    <VersionPrefix Condition="'$(VersionPrefix)' == ''">$([System.DateTime]::UtcNow.ToString('yyyy.MM.dd'))</VersionPrefix>
     <Version>$(VersionPrefix)</Version>
     <Authors>ATS Scanner Contributors</Authors>
     <Copyright>Copyright © 2026 ATS Scanner Contributors</Copyright>
