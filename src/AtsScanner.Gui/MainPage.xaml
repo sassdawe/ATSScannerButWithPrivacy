@@ -15,7 +15,7 @@
         </VerticalStackLayout>
 
         <!-- File selection -->
-        <Border Grid.Row="1" Stroke="LightGray" StrokeThickness="1" Padding="16" StrokeShape="RoundRectangle 8">
+        <Border Grid.Row="1" Stroke="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray600}}" StrokeThickness="1" Padding="16" StrokeShape="RoundRectangle 8">
             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                 <Button Grid.Column="0" Text="Choose Resume…" Clicked="OnChooseFileClicked" />
                 <Label Grid.Column="1" Text="{Binding SelectedFileName}" VerticalOptions="Center" LineBreakMode="MiddleTruncation" />
