@@ -1,5 +1,7 @@
 using AtsScanner.Core.Models;
 
+using Avalonia.Media;
+
 namespace AtsScanner.Gui.ViewModels;
 
 /// <summary>Display-ready wrapper around a single platform's <see cref="ScanResult"/>, with expand/collapse state for the details panel.</summary>
@@ -45,13 +47,13 @@ public sealed class ScanResultViewModel : ObservableObject
 
     public string ScoreLabel => $"{Score}/100";
 
-    public Color RatingColor => Score switch
+    public IBrush RatingBrush => Score switch
     {
-        >= 90 => Colors.SeaGreen,
-        >= 75 => Colors.YellowGreen,
-        >= 55 => Colors.Goldenrod,
-        >= 35 => Colors.DarkOrange,
-        _ => Colors.Crimson
+        >= 90 => Brushes.SeaGreen,
+        >= 75 => Brushes.YellowGreen,
+        >= 55 => Brushes.Goldenrod,
+        >= 35 => Brushes.DarkOrange,
+        _ => Brushes.Crimson
     };
 
     public string IssuesSummary { get; }

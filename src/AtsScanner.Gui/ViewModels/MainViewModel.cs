@@ -5,7 +5,7 @@ using AtsScanner.Core.Profiles;
 
 namespace AtsScanner.Gui.ViewModels;
 
-/// <summary>Backing view model for <see cref="MainPage"/>: file selection, platform toggles, and scan execution.</summary>
+/// <summary>Backing view model for <see cref="MainWindow"/>: file selection, platform toggles, and scan execution.</summary>
 public sealed class MainViewModel : ObservableObject
 {
     private readonly ResumeAnalyzer _analyzer = new();
@@ -19,11 +19,14 @@ public sealed class MainViewModel : ObservableObject
         Platforms = new ObservableCollection<PlatformOption>(
             ProfileRegistry.GetAll().Select(p => new PlatformOption(p.Platform, p.DisplayName)));
 
+        foreach (var platform in Platforms)
+            platform.PropertyChanged += (_, _) => NotifyCanScanChanged();
+
         Results = [];
 
-        ScanCommand = new Command(async () => await ScanAsync(), () => CanScan);
-        SelectAllCommand = new Command(() => SetAllPlatforms(true));
-        SelectNoneCommand = new Command(() => SetAllPlatforms(false));
+        ScanCommand = new AsyncRelayCommand(ScanAsync, () => CanScan);
+        SelectAllCommand = new RelayCommand(() => SetAllPlatforms(true));
+        SelectNoneCommand = new RelayCommand(() => SetAllPlatforms(false));
     }
 
     public ObservableCollection<PlatformOption> Platforms { get; }
@@ -45,7 +48,7 @@ public sealed class MainViewModel : ObservableObject
             {
                 OnPropertyChanged(nameof(SelectedFileName));
                 OnPropertyChanged(nameof(HasSelectedFile));
-                ((Command)ScanCommand).ChangeCanExecute();
+                NotifyCanScanChanged();
             }
         }
     }
@@ -61,7 +64,7 @@ public sealed class MainViewModel : ObservableObject
         private set
         {
             if (SetProperty(ref _isBusy, value))
-                ((Command)ScanCommand).ChangeCanExecute();
+                NotifyCanScanChanged();
         }
     }
 
@@ -73,32 +76,11 @@ public sealed class MainViewModel : ObservableObject
 
     private bool CanScan => !IsBusy && HasSelectedFile && Platforms.Any(p => p.IsSelected);
 
-    public async Task PickFileAsync()
+    public void SelectFile(string selectedFilePath)
     {
-        try
-        {
-            var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-            {
-                { DevicePlatform.WinUI, [".pdf", ".docx", ".md", ".markdown"] },
-                { DevicePlatform.MacCatalyst, ["pdf", "docx", "md", "markdown"] }
-            });
-
-            var result = await FilePicker.Default.PickAsync(new PickOptions
-            {
-                PickerTitle = "Select a resume",
-                FileTypes = customFileType
-            });
-
-            if (result is null) return;
-
-            SelectedFilePath = result.FullPath;
-            Results.Clear();
-            StatusMessage = "Ready to scan.";
-        }
-        catch (Exception ex)
-        {
-            StatusMessage = $"Could not open file picker: {ex.Message}";
-        }
+        SelectedFilePath = selectedFilePath;
+        Results.Clear();
+        StatusMessage = "Ready to scan.";
     }
 
     private void SetAllPlatforms(bool selected)
@@ -106,7 +88,13 @@ public sealed class MainViewModel : ObservableObject
         foreach (var platform in Platforms)
             platform.IsSelected = selected;
 
-        ((Command)ScanCommand).ChangeCanExecute();
+        NotifyCanScanChanged();
+    }
+
+    private void NotifyCanScanChanged()
+    {
+        if (ScanCommand is AsyncRelayCommand scanCommand)
+            scanCommand.NotifyCanExecuteChanged();
     }
 
     private async Task ScanAsync()
