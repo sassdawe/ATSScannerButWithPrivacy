@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Windows Machine": {
+    "ATS Scanner GUI": {
       "commandName": "Project",
       "nativeDebugging": false
     }

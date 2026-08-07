@@ -1,5 +1,7 @@
 using AtsScanner.Core.Models;
 
+using Avalonia.Media;
+
 namespace AtsScanner.Gui.ViewModels;
 
 /// <summary>Display-ready wrapper around a single <see cref="ScanIssue"/>.</summary>
@@ -12,11 +14,11 @@ public sealed class IssueDisplay(ScanIssue issue)
         _ => "ℹ"
     };
 
-    public Color IconColor => issue.Severity switch
+    public IBrush IconBrush => issue.Severity switch
     {
-        IssueSeverity.Critical => Colors.Crimson,
-        IssueSeverity.Warning => Colors.Goldenrod,
-        _ => Colors.Gray
+        IssueSeverity.Critical => Brushes.Crimson,
+        IssueSeverity.Warning => Brushes.Goldenrod,
+        _ => Brushes.Gray
     };
 
     public string Category => issue.Category;

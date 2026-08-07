@@ -73,12 +73,16 @@ jobs:
         include:
           - rid: win-x64
             os: windows-latest
-            tfm: net10.0-windows10.0.19041.0
             artifact: gui-win-x64
-          - rid: maccatalyst-x64
+          - rid: osx-x64
             os: macos-latest
-            tfm: net10.0-maccatalyst
             artifact: gui-osx-x64
+          - rid: osx-arm64
+            os: macos-latest
+            artifact: gui-osx-arm64
+          - rid: linux-x64
+            os: ubuntu-latest
+            artifact: gui-linux-x64
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -87,21 +91,9 @@ jobs:
         with:
           dotnet-version: '10.x'
 
-      - name: Install required MAUI workloads
-        run: dotnet workload restore src/AtsScanner.Gui/AtsScanner.Gui.csproj
-
-      - name: Publish (Windows)
-        if: matrix.os == 'windows-latest'
+      - name: Publish
         run: >
-          dotnet publish src/AtsScanner.Gui -f ${{ matrix.tfm }} -c Release -r ${{ matrix.rid }}
-          --self-contained true
-          -p:WindowsAppSDKSelfContained=true
-          -o ./dist/${{ matrix.artifact }}
-
-      - name: Publish (MacCatalyst)
-        if: matrix.os == 'macos-latest'
-        run: >
-          dotnet publish src/AtsScanner.Gui -f ${{ matrix.tfm }} -c Release -r ${{ matrix.rid }}
+          dotnet publish src/AtsScanner.Gui -c Release -r ${{ matrix.rid }}
           --self-contained true
           -o ./dist/${{ matrix.artifact }}
 
@@ -111,7 +103,7 @@ jobs:
           if [ "${{ matrix.os }}" = "windows-latest" ]; then
             test -f "dist/${{ matrix.artifact }}/AtsScanner.Gui.exe"
           else
-            ls -d dist/${{ matrix.artifact }}/*.app >/dev/null 2>&1 || ls dist/${{ matrix.artifact }}/*.pkg >/dev/null 2>&1
+            test -f "dist/${{ matrix.artifact }}/AtsScanner.Gui"
           fi
 
       - name: Package (Windows)
@@ -122,8 +114,8 @@ jobs:
           Compress-Archive -Path * -DestinationPath "../../ats-scanner-${{ matrix.artifact }}.zip" -Force
           Pop-Location
 
-      - name: Package (macOS)
-        if: matrix.os == 'macos-latest'
+      - name: Package (Unix)
+        if: matrix.os != 'windows-latest'
         shell: bash
         run: |
           cd dist/${{ matrix.artifact }}
