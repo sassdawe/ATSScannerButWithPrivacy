@@ -306,7 +306,7 @@ class AtsScanner < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/your-username/ASTScannerButWithPrivacy/releases/download/v1.0.0/ats-scanner-linux-arm64.zip"
+      url "https://github.com/your-username/ATSScannerButWithPrivacy/releases/download/v1.0.0/ats-scanner-linux-arm64.zip"
       sha256 "<SHA256_OF_LINUX_ARM64_ZIP>"
     end
     on_intel do
