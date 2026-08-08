@@ -148,6 +148,8 @@ chmod +x ~/.local/bin/ats-scanner
 
 Use `ats-scanner-linux-arm64.zip` instead on Linux ARM64 systems.
 
+The release workflow also publishes GUI packages named `ats-scanner-gui-<rid>.zip`, including `ats-scanner-gui-linux-arm64.zip` for Linux ARM64 desktops.
+
 ---
 
 ## Option 2 — dotnet global tool (NuGet.org)

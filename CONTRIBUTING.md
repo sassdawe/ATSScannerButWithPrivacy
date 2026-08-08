@@ -246,6 +246,9 @@ dotnet publish src/AtsScanner.Cli -c Release -r linux-x64 --self-contained true 
 
 # Linux ARM64
 dotnet publish src/AtsScanner.Cli -c Release -r linux-arm64 --self-contained true -p:PublishSingleFile=true -o ./dist/linux-arm64
+
+# Linux ARM64 GUI
+dotnet publish src/AtsScanner.Gui -c Release -r linux-arm64 --self-contained true -o ./dist/gui-linux-arm64
 ```
 
 See [DISTRIBUTION.md](DISTRIBUTION.md) for packaging, WinGet, Homebrew, and NuGet publishing instructions.
