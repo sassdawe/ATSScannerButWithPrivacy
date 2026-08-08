@@ -21,6 +21,9 @@ jobs:
           - rid: linux-x64
             os: ubuntu-latest
             ext: ''
+          - rid: linux-arm64
+            os: ubuntu-latest
+            ext: ''
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -42,6 +45,7 @@ jobs:
           -o ./dist/${{ matrix.rid }}
 
       - name: Smoke test executable
+        if: matrix.rid != 'linux-arm64'
         shell: bash
         run: |
           ./dist/${{ matrix.rid }}/ats-scanner${{ matrix.ext }} --help
@@ -83,6 +87,9 @@ jobs:
           - rid: linux-x64
             os: ubuntu-latest
             artifact: gui-linux-x64
+          - rid: linux-arm64
+            os: ubuntu-latest
+            artifact: gui-linux-arm64
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
