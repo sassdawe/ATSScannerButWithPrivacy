@@ -65,7 +65,7 @@ Add to `src/AtsScanner.Cli/AtsScanner.Cli.csproj`:
 
 ### GitHub Release workflow
 
-Create `.github/workflows/release.yml` to build and attach all five CLI binaries automatically when a version tag is pushed:
+The repository’s `.github/workflows/release.yml` builds and attaches all five CLI binaries automatically when a version tag is pushed:
 
 ```yaml
 name: Release
