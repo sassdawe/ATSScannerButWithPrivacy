@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-A local, **privacy-first** resume scannerthat shows you how your resume will perform on the most popular Applicant Tracking Systems (ATS) — without uploading your document anywhere.
+A local, **privacy-first** resume scanner that shows you how your resume will perform on the most popular Applicant Tracking Systems (ATS) — without uploading your document anywhere.
 
 Your resume never leaves your machine.
 
