@@ -39,6 +39,13 @@ dotnet publish src/AtsScanner.Cli -c Release -r linux-x64 \
   -p:PublishSingleFile=true \
   -p:PublishTrimmed=true \
   -o ./dist/linux-x64
+
+# Linux ARM64
+dotnet publish src/AtsScanner.Cli -c Release -r linux-arm64 \
+  --self-contained true \
+  -p:PublishSingleFile=true \
+  -p:PublishTrimmed=true \
+  -o ./dist/linux-arm64
 ```
 
 ### Csproj changes needed
@@ -58,7 +65,7 @@ Add to `src/AtsScanner.Cli/AtsScanner.Cli.csproj`:
 
 ### GitHub Release workflow
 
-Create `.github/workflows/release.yml` to build and attach all four binaries automatically when a version tag is pushed:
+Create `.github/workflows/release.yml` to build and attach all five CLI binaries automatically when a version tag is pushed:
 
 ```yaml
 name: Release
@@ -82,6 +89,9 @@ jobs:
             os: macos-latest
             ext: ''
           - rid: linux-x64
+            os: ubuntu-latest
+            ext: ''
+          - rid: linux-arm64
             os: ubuntu-latest
             ext: ''
     runs-on: ${{ matrix.os }}
@@ -135,6 +145,8 @@ curl -Lo ats-scanner.zip https://github.com/your-username/ASTScannerButWithPriva
 unzip ats-scanner.zip -d ~/.local/bin/
 chmod +x ~/.local/bin/ats-scanner
 ```
+
+Use `ats-scanner-linux-arm64.zip` instead on Linux ARM64 systems.
 
 ---
 
@@ -291,8 +303,14 @@ class AtsScanner < Formula
   end
 
   on_linux do
-    url "https://github.com/your-username/ASTScannerButWithPrivacy/releases/download/v1.0.0/ats-scanner-linux-x64.zip"
-    sha256 "<SHA256_OF_LINUX_ZIP>"
+    on_arm do
+      url "https://github.com/your-username/ASTScannerButWithPrivacy/releases/download/v1.0.0/ats-scanner-linux-arm64.zip"
+      sha256 "<SHA256_OF_LINUX_ARM64_ZIP>"
+    end
+    on_intel do
+      url "https://github.com/your-username/ASTScannerButWithPrivacy/releases/download/v1.0.0/ats-scanner-linux-x64.zip"
+      sha256 "<SHA256_OF_LINUX_X64_ZIP>"
+    end
   end
 
   def install
