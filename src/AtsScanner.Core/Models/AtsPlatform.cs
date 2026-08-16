@@ -12,5 +12,6 @@ public enum AtsPlatform
     SmartRecruiters,
     Avature,
     Personio,
-    Prospective
+    Prospective,
+    Refline
 }

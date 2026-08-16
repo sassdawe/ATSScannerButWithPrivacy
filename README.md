@@ -23,6 +23,7 @@ Your resume never leaves your machine.
 | **Avature** | Configurable enterprise ATS/CRM; keyword-scoring against job requisitions, no image OCR |
 | **Personio** | DACH-region HR/ATS for SMEs; bilingual (German/English) header recognition, no image OCR |
 | **prospective.ch** | Swiss e-recruiting platform used by public administrations & SMEs; German/French/Italian headers, strict on layout and dates |
+| **refline.io** | Swiss ATS for SMEs, large companies & public sector; German/French/Italian headers, strict on layout and dates |
 
 ---
 
@@ -76,7 +77,7 @@ ats-scanner scan <resume> [options]
 
 | Option | Values | Default | Description |
 |---|---|---|---|
-| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis`, `digitalent`, `smartrecruiters`, `avature`, `personio`, `prospective` | `all` | ATS platform to check against |
+| `-p`, `--platform` | `all`, `workday`, `greenhouse`, `taleo`, `lever`, `successfactors`, `umantis`, `digitalent`, `smartrecruiters`, `avature`, `personio`, `prospective`, `refline` | `all` | ATS platform to check against |
 | `-o`, `--output` | `text`, `json` | `text` | Output format |
 | `-v`, `--verbose` | — | off | Show expanded results with document analysis, positive checklist, issues grouped by category, and top priority actions |
 

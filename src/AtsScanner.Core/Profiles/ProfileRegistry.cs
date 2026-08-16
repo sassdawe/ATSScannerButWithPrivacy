@@ -17,7 +17,8 @@ public static class ProfileRegistry
         new SmartRecruitersProfile(),
         new AvatureProfile(),
         new PersonioProfile(),
-        new ProspectiveProfile()
+        new ProspectiveProfile(),
+        new ReflineProfile()
     ];
 
     public static IReadOnlyList<IAtsPlatformProfile> GetAll() => All;
@@ -40,6 +41,7 @@ public static class ProfileRegistry
             "avature" or "avature.net" => AtsPlatform.Avature,
             "personio" or "personio.com" or "personio.de" => AtsPlatform.Personio,
             "prospective" or "prospective.ch" => AtsPlatform.Prospective,
+            "refline" or "refline.io" => AtsPlatform.Refline,
             _ => (AtsPlatform)(-1)
         };
         return (int)platform >= 0;
