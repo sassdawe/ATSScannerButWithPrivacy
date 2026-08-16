@@ -13,7 +13,7 @@ public sealed class ScanSettings : CommandSettings
     public string ResumePath { get; init; } = "";
 
     [CommandOption("-p|--platform")]
-    [Description("ATS platform to scan against: all, workday, greenhouse, taleo, lever, successfactors, umantis, digitalent, smartrecruiters, avature, personio, prospective")]
+    [Description("ATS platform to scan against: all, workday, greenhouse, taleo, lever, successfactors, umantis, digitalent, smartrecruiters, avature, personio, prospective, refline")]
     [DefaultValue("all")]
     public string Platform { get; init; } = "all";
 
